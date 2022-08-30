@@ -1,0 +1,16 @@
+{
+    "name": "HKU Moodle Download Router",
+    "description": "Automatically changes the downlaod location based on current Moodle course page.",
+    "version": "1.0",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://*/*", "http://*/*"],
+            "js": ["content.js"]
+        }
+    ],
+    "permissions": ["tabs", "downloads"]
+}
