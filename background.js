@@ -1,4 +1,4 @@
-let courseTitle = ''
+let courseTitle = 'moodle.hku.hk'
 
 chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
     if (
