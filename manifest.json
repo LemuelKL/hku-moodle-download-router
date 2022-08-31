@@ -1,14 +1,20 @@
 {
     "name": "HKU Moodle Download Router",
     "description": "Automatically changes the downlaod location based on current Moodle course page.",
-    "version": "1.0",
+    "version": "0.0.1",
+    "icons": {
+        "16": "icon16.png",
+        "32": "icon32.png",
+        "64": "icon64.png",
+        "128": "icon128.png"
+    },
     "manifest_version": 3,
     "background": {
         "service_worker": "background.js"
     },
     "content_scripts": [
         {
-            "matches": ["https://*/*", "http://*/*"],
+            "matches": ["*://moodle.hku.hk/course/view.php?id=*"],
             "js": ["content.js"]
         }
     ],
