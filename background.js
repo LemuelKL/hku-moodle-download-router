@@ -14,7 +14,7 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
                         action: 'getCourseTitle',
                     },
                     function (response) {
-                        courseTitle = response.courseTitle
+                        courseTitle = response.courseTitle ?? 'moodle.hku.hk'
                     }
                 )
             }
@@ -26,7 +26,9 @@ chrome.downloads.onDeterminingFilename.addListener(function (
     donwloadItem,
     suggest
 ) {
+    const suggestedFilename = `${courseTitle}/${donwloadItem.filename}`
+    console.log(suggestedFilename)
     suggest({
-        filename: `${courseTitle}/${donwloadItem.filename}`,
+        filename: suggestedFilename,
     })
 })
