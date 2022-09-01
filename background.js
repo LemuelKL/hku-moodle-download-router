@@ -1,14 +1,19 @@
 let courseCode = 'moodle.hku.hk'
 
 function updateCourseCode(tabId, changeInfo, tab) {
-    if (
-        !tab.url.includes('://moodle.hku.hk') ||
-        changeInfo.status !== 'complete'
-    )
+    const url = new URL(tab.url)
+    if (!url.hostname === 'moodle.hku.hk' || changeInfo.status !== 'complete')
         return
-    if (tab.url.includes('/course/view.php?id=')) {
+
+    const pathname = url.pathname
+
+    if (pathname === '/course/view.php') {
         courseCode = tab.title.split(' ')[1]
-    } else if (tab.url.includes('/mod/folder/view.php?id=')) {
+    } else if (
+        pathname === '/mod/folder/view.php' ||
+        pathname === '/mod/assign/view.php' ||
+        pathname === '/mod/forum/discuss.php'
+    ) {
         courseCode = tab.title.split('_')[0]
     }
 }
