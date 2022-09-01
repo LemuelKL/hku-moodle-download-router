@@ -16,12 +16,17 @@ Downloads/
 
 To go the extra mile, one may set up symbolic links. This is especially useful say for those who already have their course folders on Onedrive. 
 
-## Usage
+## Installation
 1. Clone this repository.
 2. Enable Developer Mode in your web browser.
 3. Load this repo via "Load Unpacked Extension".
 
-## Support URLs
+## Usage
+Initiate a download on a supported page with the extension running.
+
+Note that sometimes Moodle items are "diguised" as downloadable files but are actually just a hyperlink to `https://moodle.hku.hk/mod/resource/view.php?id=xxxxxxx`. In such case, right click and "Save link as". The key is to make sure the browser tab is on a supported page at the moment the download action is triggered.
+
+## Supported Pages
 ```js
 pathname === '/course/view.php' ||
 pathname === '/mod/folder/view.php' ||
