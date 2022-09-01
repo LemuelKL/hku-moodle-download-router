@@ -20,3 +20,13 @@ To go the extra mile, one may set up symbolic links. This is especially useful s
 1. Clone this repository.
 2. Enable Developer Mode in your web browser.
 3. Load this repo via "Load Unpacked Extension".
+
+## Support URLs
+```js
+pathname === '/course/view.php' ||
+pathname === '/mod/folder/view.php' ||
+pathname === '/mod/assign/view.php' ||
+pathname === '/mod/forum/discuss.php'
+```
+
+If you encounter another Moodle module that you think is frequently used by HKU but not supported, feel free to open a pull request.
