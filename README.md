@@ -1,7 +1,7 @@
 # HKU Moodle Download Router
 Designed by a HKU student for the HKU Moodle, a chromium extension that automatically changes the download location based on the current Moodle course page.  
 
-With this extension, the course code e.g. `ENGG1330` is fetched from the DOM and set as the `suggest` directory under the default download folder set in your web browser. 
+With this extension, the course code e.g. `ENGG1330` is fetched from the browser tab Title and set as the "suggested" directory under the default download folder set in your web browser.
 
 The end result is a beautifully organized download folder:
 
