@@ -20,6 +20,3 @@ To go the extra mile, one may set up symbolic links. This is especially useful s
 1. Clone this repository.
 2. Enable Developer Mode in your web browser.
 3. Load this repo via "Load Unpacked Extension".
-
-## Limitations
-1. Does not work for download items that are put in Moodle "Folder"s because this extension relies on the DOM of the main course page.
