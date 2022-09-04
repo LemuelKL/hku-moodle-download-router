@@ -1,9 +1,13 @@
-let courseCode = 'moodle.hku.hk'
+let courseCode = ''
 
 function updateCourseCode(tabId, changeInfo, tab) {
     const url = new URL(tab.url)
-    if (!url.hostname === 'moodle.hku.hk' || changeInfo.status !== 'complete')
+    if (changeInfo.status !== 'complete') return
+
+    if (!url.hostname === 'moodle.hku.hk') {
+        courseCode = ''
         return
+    }
 
     const pathname = url.pathname
 
@@ -15,6 +19,8 @@ function updateCourseCode(tabId, changeInfo, tab) {
         pathname === '/mod/forum/discuss.php'
     ) {
         courseCode = tab.title.split('_')[0]
+    } else {
+        courseCode = 'moodle.hku.hk'
     }
 }
 
