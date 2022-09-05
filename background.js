@@ -30,7 +30,10 @@ chrome.downloads.onDeterminingFilename.addListener(function (
     donwloadItem,
     suggest
 ) {
-    const suggestedFilename = `${courseCode}/${donwloadItem.filename}`
+    const suggestedFilename =
+        courseCode === ''
+            ? donwloadItem.filename
+            : `${courseCode}/${donwloadItem.filename}`
     console.log(suggestedFilename)
     suggest({
         filename: suggestedFilename,
